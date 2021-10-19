@@ -2,6 +2,9 @@ const messagesElement = document.querySelector('#messages');
 const messageFormElement = document.querySelector('#messageForm');
 const messageInputElement = document.querySelector('#messageInput');
 
+const SERVER_URL = 'http://localhost:3000';
+const socket = io(SERVER_URL);
+
 messageFormElement.addEventListener('submit', (e) => {
     e.preventDefault();
 
