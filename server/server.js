@@ -10,5 +10,7 @@ const io = socketio(PORT, {
 });
 
 io.on('connection', (socket) => {
-    console.log('New connection');
+    socket.on('message', data => {
+        socket.broadcast.emit('message', { sender: data.sender, message: data.message });
+    });
 });
